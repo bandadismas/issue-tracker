@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ccr-jfsa9=eske2t)^h7u7ax6-q4g4hqs^&9xn#ygeww-4u(5m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://issue-tracker-db.herokuapp.com/']
+ALLOWED_HOSTS = ['issue-tracker-db.herokuapp.com']
 
 
 # Application definition
