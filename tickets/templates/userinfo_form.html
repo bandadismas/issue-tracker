@@ -1,0 +1,49 @@
+{% extends "ticket_base.html" %}
+{% block title %}
+  <h2 class="pl-3">Create User Details</h2>
+{% endblock %}
+
+{% block data %}
+<div class="pl-3">
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.firstname.label_tag }}
+    <br />
+    {{ form.firstname }}
+  </div>
+  <div class="form-group">
+    {{ form.surname.label_tag }}
+    <br />
+    {{ form.surname }}
+  </div>
+  <div class="form-group">
+    {{ form.gender.label_tag }}
+    <br />
+    {{ form.gender }}
+  </div>
+  <div class="form-group">
+    {{ form.date_of_birth.label_tag }}
+    <br />
+    {{ form.date_of_birth }}
+  </div>
+  <div class="form-group">
+    {{ form.department.label_tag }}
+    <br />
+    {{ form.department }}
+  </div>
+  <div class="form-group">
+    {{ form.contact_line1.label_tag }}
+    <br />
+    {{ form.contact_line1 }}
+  </div>
+  <div class="form-group">
+    {{ form.contact_line2.label_tag }}
+    <br />
+    {{ form.contact_line2 }}
+  </div>
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+</form>
+  </div>
+{% endblock %}

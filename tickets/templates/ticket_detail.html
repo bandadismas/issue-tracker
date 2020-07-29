@@ -1,0 +1,53 @@
+{% extends 'ticket_base.html' %}
+
+{% block title %}
+  <h1>Ticket Details</h1>
+{% endblock %}
+
+{% block data %}
+        <table class="table">
+    <tr>
+      <th>Name</th>
+      <td>{{ object.name }}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{ object.description|linebreaks }}</td>
+    </tr>
+    <tr>
+      <th>Created by</th>
+      <td>{{ object.created_by }}</td>
+    </tr>
+    <tr>
+      <th>date created</th>
+      <td>{{ object.date_created }}</td>
+    </tr>
+    <tr>
+      <th>date_resolved</th>
+      <td>{{ object.date_resolved }}</td>
+    </tr>
+    <tr>
+      <th>priority</th>
+      <td>{{ object.get_priority_display }}</td>
+    </tr>
+    <tr>
+      <th>status</th>
+      <td>{{ object.get_status_display }}</td>
+    </tr>
+    <tr>
+      <th>assigned_to</th>
+      <td>{{ object.assigned_to }}</td>
+    </tr>
+    <tr>
+      <th>department_concerned</th>
+      <td>{{ object.get_department_concerned_display}}</td>
+    </tr>
+  </table>
+  <a
+  href="{% url 'update_ticket' object.id %}">
+  Update
+</a>
+    </main>
+</div>
+{% endblock %}
+

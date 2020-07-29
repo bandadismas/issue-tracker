@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta
+        name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% block css %}
+    {% endblock css%}
+    <title>Issue Tracker</title>
+</head>
+<body>
+<div class="login-back vh-100 d-flex justify-content-center align-items-center">
+
+<div class="backdrop-effect rounded-lg px-5 text-center">
+  <h2 class="text-center mb-5">Issue Tracker Login</h2>
+    <form method="post">
+      {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="row">
+            <div class="col">
+  <div class="form-group">
+
+    <input
+      type="email"
+      class="form-control {% if form.email.errors %}is-invalid{% endif %}"
+      id="id_email"
+      name="email"
+      placeholder="Email"
+      value="{{ form.email.value|default:"" }}">
+    {% if form.email.errors %}
+      <div class="invalid-feedback">
+        {{ form.email.errors }}
+      </div>
+    {% endif %}
+  </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+  <div class="form-group">
+
+      <input
+      type="password"
+      class="form-control{% if form.password.errors %}is-invalid{% endif %}"
+      id="id_password"
+      name="password"
+      placeholder="Password"
+      value="{{ form.password.value|default:'' }}">
+      {% if form.password.errors %}
+      <div class="invalid-feedback">
+        {{ form.password.errors }}
+      </div>
+    {% endif %}
+      </div>
+        </div>
+  </div>
+        <div class="row">
+            <div class="col">
+      <button type="submit" class="btn btn-outline-primary btn-block mt-5">Sign In</button>
+                </div>
+        </div>
+    </form>
+    <div class="text-center mt-5">
+        <small>Create an account? <a href="{% url 'signup' %}" class="mb-0 text-decoration-none">SignUp</a></small><br/>
+        <small>Sign in as a demo user <a href="{% url 'demo_user' %}" class="text-decoration-none">Demo User</a></small>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col">
+<footer class="footer text-center bg-secondary text-white">&copy 2020 Dismas Banda</footer>
+        </div>
+</div>
+<script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

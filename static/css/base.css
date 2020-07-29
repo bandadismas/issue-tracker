@@ -1,0 +1,26 @@
+.jumbotron-welcome {
+    background-image: url('../images/skyline.jpeg');
+
+    color: white;
+}
+
+.navbar-base {
+    background-color: #504747;
+    border-color: black;
+    border-radius: 0;
+    margin-bottom: 0px;
+}
+
+.thumb {
+    width: 30px;
+    height: 30px;
+}
+
+.image {
+    width:100px;
+    height: 100px;
+}
+
+.bg-main {
+    background-color: #e1e1e1;
+}

@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse ">
+      <div class="sidebar-sticky pt-5 pl-2">
+        <ul class="nav flex-column ">
+          <li class="nav-item">
+            <span data-feather="home"></span>
+              Tickets
+            <ul>
+                <li class="nav-item">
+                      <span data-feather="shopping-cart"></span>
+                      My Tickets
+                        <ul>
+                          <li class="nav-item">
+                      <a class="nav-link" href="{% url 'assigned_to' %}">
+                        <span data-feather="file"></span>
+                        Assigned to
+                      </a>
+                    </li>
+                          <li class="nav-item">
+                      <a class="nav-link" href="{% url 'created_tickets' %}">
+                        <span data-feather="file"></span>
+                        Created
+                      </a>
+                    </li>
+                        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'unresolved' %}">
+                      <span data-feather="file"></span>
+                      Unresolved
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                      <span data-feather="file"></span>
+                      All
+                    </a>
+                </li>
+                <li class="nav-item">
+                      <span data-feather="shopping-cart"></span>
+                      Priority
+                        <ul>
+                          <li class="nav-item">
+                      <a class="nav-link" href="{% url 'high' %}">
+                        <span data-feather="file"></span>
+                        High
+                      </a>
+                    </li>
+                          <li class="nav-item">
+                      <a class="nav-link" href="{% url 'medium' %}">
+                        <span data-feather="file"></span>
+                        Medium
+                      </a>
+                    </li>
+                          <li class="nav-item">
+                      <a class="nav-link" href="{% url 'low' %}">
+                        <span data-feather="file"></span>
+                        Low
+                      </a>
+                    </li>
+                    </ul>
+                </li>
+              <li class="nav-item">
+                        <span data-feather="file"></span>
+                        Status
+                  <ul>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'open' %}">
+                          <span data-feather="file"></span>
+                          Open
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'in_progress' %}">
+                          <span data-feather="file"></span>
+                          In progress
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'resolved' %}">
+                          <span data-feather="file"></span>
+                          Resolved
+                        </a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                        <span data-feather="file"></span>
+                        Departments
+                  <ul>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'engineering' %}">
+                          <span data-feather="file"></span>
+                          Engineering
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'sales' %}">
+                          <span data-feather="file"></span>
+                          Sales
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'accounts' %}">
+                          <span data-feather="file"></span>
+                          Accounts
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'hr' %}">
+                          <span data-feather="file"></span>
+                          Human Resource
+                        </a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 col-xl-10 ml-sm-auto  pl-5 bg-main">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom border-secondary mr-3">
+        {% block title %}
+        {% endblock %}
+      </div>
+      {% block data %}
+    {% endblock %}
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "ticket_base.html" %}
+{% block title %}
+  <h2>Create ticket</h2>
+{% endblock  %}
+
+{% block data %}
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.name.label_tag }}
+    <br />
+    {{ form.name }}
+  </div>
+  <div class="form-group">
+    {{ form.description.label_tag }}
+    <br />
+    {{ form.description }}
+  </div>
+  <div class="form-group">
+    {{ form.priority.label_tag }}
+    <br />
+    {{ form.priority }}
+    {% if form.priority.errors %}
+      <div class="invalid-feedback">
+        {{ form.priority.errors }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.department_concerned.label_tag }}
+    <br />
+    {{ form.department_concerned }}
+    {% if form.department_concerned.errors %}
+      <div class="invalid-feedback">
+        {{ form.department_concerned.errors }}
+      </div>
+    {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+{% endblock %}

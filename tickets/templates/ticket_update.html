@@ -1,0 +1,54 @@
+{% extends "ticket_base.html" %}
+<div class="pl-5">
+{% block title %}
+  <h2>Update ticket</h2>
+{% endblock %}
+
+{% block data %}
+
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.name.label_tag }}
+    <br />
+    {{ form.name }}
+  </div>
+  <div class="form-group">
+    {{ form.description.label_tag }}
+    <br />
+    {{ form.description }}
+  </div>
+  <div class="form-group">
+    {{ form.priority.label_tag }}
+    <br />
+    {{ form.priority }}
+    {% if form.priority.errors %}
+      <div class="invalid-feedback">
+        {{ form.priority.errors }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.department_concerned.label_tag }}
+    <br />
+    {{ form.department_concerned }}
+    {% if form.department_concerned.errors %}
+      <div class="invalid-feedback">
+        {{ form.department_concerned.errors }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.status.label_tag }}
+    <br />
+    {{ form.status }}
+  </div>
+  <div class="form-group">
+    {{ form.assigned_to.label_tag }}
+    <br />
+    {{ form.assigned_to }}
+  </div>
+  <button type="submit" class="btn btn-primary mt-3 justify-content-center">Submit</button>
+</form>
+  </div>
+{% endblock %}

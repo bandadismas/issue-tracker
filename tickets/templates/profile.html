@@ -1,0 +1,51 @@
+{% extends 'ticket_base.html' %}
+
+{% block title %}
+    <h2>Profile</h2>
+{% endblock %}
+<div class="px-5">
+{% block data %}
+    <div class="row mb-5">
+        <div class="col">
+            <img src="{{user.userinfo.profile_pic.url}}" alt="" class="img-fluid rounded-lg image">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-md-4 ">
+            <p>Name: {{user.userinfo.firstname}}</p>
+        </div>
+        <div class="col-6 col-md-4">
+            <p>Surname: {{user.userinfo.surname}}</p>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-md-4">
+
+            <p>Email: {{user.email}}</p>
+        </div>
+        <div class="col-6 col-md-4">
+            <p>Gender: {{user.userinfo.get_gender_display}}<br/></p>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-6 col-md-4">
+            <p>Department: {{user.userinfo.get_department_display}}</p>
+        </div>
+        <div class="col-6 col-md-4">
+            <p>Contact line: {{user.userinfo.contact_line1}}<br/></p>
+        </div>
+    </div>
+    <div class="row my-3 ">
+        <div class="col">
+            <a href="{% url 'userinfo_update' %}">Edit</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+</div>

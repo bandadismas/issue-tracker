@@ -1,0 +1,28 @@
+
+<!-- templates/signup.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="pl-5 mt-2 ">
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row mt-4 mb-3 vh-75">
+      <div class="col-4 col-lg-2">{{ form.email.label_tag }}</div>
+      <div class="col-7">{{ form.email }}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-4 col-lg-2">{{ form.password1.label_tag }}</div>
+      <div class="col-7">{{ form.password1 }}</div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-4 col-lg-2">{{ form.password2.label_tag }}</div>
+      <div class="col-7"> {{ form.password2 }}</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-5">Sign up</button>
+  </form>
+</div>
+{% endblock %}
