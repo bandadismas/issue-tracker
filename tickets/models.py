@@ -100,3 +100,6 @@ class Ticket(models.Model):
     assigned_to = models.ForeignKey(User, on_delete=models.CASCADE, related_name='assigned_to', null=True)
     department_concerned = models.CharField(max_length=1, choices=DEPARTMENTS)
 
+    class Meta:
+	    ordering = ["-date_created"]
+
