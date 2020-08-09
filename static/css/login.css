@@ -8,3 +8,9 @@
     background-image: url(../images/grey-wall.jpeg);
     color: white;
 }
+
+.top-center {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}

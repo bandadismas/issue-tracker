@@ -13,10 +13,10 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">priority</th>
-            <th scope="col">date_created</th>
-            <th scope="col">status</th>
-            <th scope="col">department_concerned</th>
+            <th scope="col">Priority</th>
+            <th scope="col" class="d-none d-md-block">Date Created</th>
+            <th scope="col">Status</th>
+            <th scope="col" class="d-none d-md-block">Department Concerned</th>
           </tr>
         </thead>
         <tbody>
@@ -24,10 +24,12 @@
           <tr>
             <th scope="row">{{ ticket.id }}</th>
             <td><a  href="{% url 'ticket_details' ticket.id%}">{{ ticket.name }}</a></td>
-            <td>{{ ticket.get_priority_display }}</td>
-            <td>{{ ticket.date_created }}</td>
+            <td {% if ticket.priority == 'H' %} class="text-danger font-weight-bold"
+                {% elif ticket.priority == 'M' %} class="text-info font-weight-bold"
+              {% endif %}>{{ ticket.get_priority_display }}</td>
+            <td class="d-none d-md-block">{{ ticket.date_created }}</td>
             <td>{{ ticket.get_status_display }}</td>
-            <td>{{ ticket.get_department_concerned_display }}</td>
+            <td class="d-none d-md-block">{{ ticket.get_department_concerned_display }}</td>
           </tr>
           {% endfor %}
               </tbody>

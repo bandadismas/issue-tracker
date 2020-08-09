@@ -19,31 +19,31 @@
       <td>{{ object.created_by }}</td>
     </tr>
     <tr>
-      <th>date created</th>
+      <th>Date Created</th>
       <td>{{ object.date_created }}</td>
     </tr>
     <tr>
-      <th>date_resolved</th>
+      <th>Date Resolved</th>
       <td>{{ object.date_resolved }}</td>
     </tr>
     <tr>
-      <th>priority</th>
+      <th>Priority</th>
       <td>{{ object.get_priority_display }}</td>
     </tr>
     <tr>
-      <th>status</th>
+      <th>Status</th>
       <td>{{ object.get_status_display }}</td>
     </tr>
     <tr>
-      <th>assigned_to</th>
+      <th>Assigned to</th>
       <td>{{ object.assigned_to }}</td>
     </tr>
     <tr>
-      <th>department_concerned</th>
+      <th>Department Concerned</th>
       <td>{{ object.get_department_concerned_display}}</td>
     </tr>
   </table>
-  <a
+  <a role="button" class="btn btn-primary mb-5"
   href="{% url 'update_ticket' object.id %}">
   Update
 </a>

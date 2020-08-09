@@ -10,9 +10,20 @@ from django.views.generic.list import ListView
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
+from django.contrib import messages
 from datetime import datetime
+from rest_framework import viewsets
 
-from . import forms, models
+from . import forms, models, serializers
+
+
+class TicketViewSet(viewsets.ModelViewSet):
+    """
+        A viewset for viewing and editing article instances.
+        """
+
+    serializer_class = serializers.TicketSerializer
+    queryset = models.Ticket.objects.all()
 
 
 class SignupView(FormView):
@@ -27,6 +38,9 @@ class SignupView(FormView):
     def form_valid(self, form):
         response = super().form_valid(form)
         form.save()
+        messages.info(
+            self.request, "You signed up successfully. Please login below. "
+        )
 
         return response
 

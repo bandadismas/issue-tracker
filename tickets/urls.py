@@ -1,10 +1,16 @@
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import DetailView
 from django.contrib.auth import views as auth_views
 
 from . import views, forms, models
+from rest_framework.routers import DefaultRouter
+
+
+router = DefaultRouter()
+router.register('tic', views.TicketViewSet, basename='tickets')
 
 urlpatterns = [
+    path('viewsets', include(router.urls)),
     path('home/', views.HomeView.as_view(), name='home'),
     path('signup', views.SignupView.as_view(), name='signup'),
     path('create/ticket/', views.TicketCreateView.as_view(), name='create_ticket'),

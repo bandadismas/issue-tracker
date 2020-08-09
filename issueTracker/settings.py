@@ -25,6 +25,7 @@ SECRET_KEY = 'ccr-jfsa9=eske2t)^h7u7ax6-q4g4hqs^&9xn#ygeww-4u(5m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['issue-tracker-db.herokuapp.com']
 
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # my apps
+    'rest_framework',
     'tickets',
 ]
 

@@ -7,6 +7,7 @@
         name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block css %}
     {% endblock css%}
@@ -25,15 +26,15 @@
 
         <div class="collapse navbar-collapse float-right" id="collapseNav">
             <ul class="nav navbar-nav nav-pills ml-auto ">
-                <li class="nav-item"><a href="{% url 'unresolved' %}" class="nav-link px-2">Home</a></li>
-                <li class="nav-item"><a href="{% url 'create_ticket' %}" class="nav-link px-2">Create ticket</a></li>
-                <li class="nav-item dropdown">
-                    <span class="navbar-text text-success pl-5 pr-2">
+                <li class="nav-item"><a href="{% url 'unresolved' %}" class="nav-link pr-3 ml-2 ml-md-0">Home</a></li>
+                <li class="nav-item"><a href="{% url 'create_ticket' %}" class="nav-link pr-3 ml-2 ml-md-0">Create ticket</a></li>
+                <li class="nav-item">
+                    <span class="navbar-text text-success pr-3 ml-2 ml-md-0">
                         Welcome {{ user.userinfo}}
                     </span>
                 </li>
-                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-2">Profile</a></li>
-                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link px-2">Logout</a></li>
+                <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link pr-3 ml-2 ml-md-0">Profile</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link pr-2 ml-2 ml-md-0">Logout</a></li>
 
 
             </ul>
@@ -44,7 +45,7 @@
         </div>
     </nav>
 
-{% block content %}
+    {% block content %}
     {% endblock %}
     <div class="row">
     <div class="col">
@@ -54,5 +55,7 @@
     <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    {% block js %}
+    {% endblock %}
 </body>
 </html>

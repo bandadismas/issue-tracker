@@ -24,3 +24,20 @@
 .bg-main {
     background-color: #e1e1e1;
 }
+
+ul {
+    list-style: none;
+    margin-left: 0px;
+}
+
+li>a {
+    margin-left: -15px;
+    padding-left:0px;
+}
+
+.bars {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
