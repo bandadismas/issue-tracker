@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.contrib import messages
+from django.template.defaultfilters import slugify
 from datetime import datetime
 from rest_framework import viewsets
 
@@ -59,6 +60,7 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         obj = form.save(commit=False)
         obj.created_by = self.request.user
+        obj.slug = slugify(obj.name)
         obj.save()
         return super().form_valid(form)
 
