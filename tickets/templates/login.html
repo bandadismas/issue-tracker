@@ -6,7 +6,7 @@
     <meta
         name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     {% block css %}
     {% endblock css%}
@@ -73,7 +73,7 @@
     </form>
     <div class="text-center mt-5">
         <small>Create an account? <a href="{% url 'signup' %}" class="mb-0 text-decoration-none">SignUp</a></small><br/>
-        <small>Sign in as a demo user <a href="{% url 'demo_user' %}" class="text-decoration-none">Demo User</a></small>
+        <!-- <small>Sign in as a demo user <a href="{% url 'demo_user' %}" class="text-decoration-none">Demo User</a></small> -->
 
     </div>
   </div>
